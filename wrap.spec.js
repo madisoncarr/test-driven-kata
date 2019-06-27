@@ -7,8 +7,9 @@ describe('wrap', () => {
   });
 
   it('has a line break at the column number', () => {
-    expect(wrap('Well hello there mister fancy pants'), 7).to.equal(
-      'Well\nhello\nthere\nmister\nfancy\npants'
-    );
+    expect(
+      wrap('Well hello there mister fancy pants', 7),
+      'another parameter'
+    ).to.equal('Well\nhello\nthere\nmister\nfancy\npants');
   });
 });
