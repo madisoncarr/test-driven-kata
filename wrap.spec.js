@@ -12,4 +12,14 @@ describe('wrap', () => {
       'another parameter'
     ).to.equal('Well\nhello\nthere\nmister\nfancy\npants');
   });
+
+  it('does not break in the middle of a word', () => {
+    expect(wrap('Put on a spot of tea', 11).to.equal('Put on a\nspot of\ntea'));
+  });
+
+  it('returns unbreakable if there are no spaces in the string', () => {
+    expect(
+      wrap('supercalifragilisticiskbealidocious', 5).to.equal('unbreakable!')
+    );
+  });
 });
